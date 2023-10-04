@@ -1,0 +1,58 @@
+Sources:
+dexter C. kozen, automata and computability
+john e. hopcroft, jeffrey d ullman, intro to automata theory, languages, and computation
+tools for analysis: lex, flex, yacc, bison, jcup
+
+chomskey's hierarchy
+types of formal grammars:
+linear, context-free, context, general
+
+Empty word = epsilon (ε) = 0
+*especially in this course, (some other ppl might use λ)
+
+Basic:
+(xy)z = x(yz)
+x^n+1 = x^n*x = x*x^n
+
+palindrome:
+x = bob
+rev(bob) = x
+x^2 = bobbob
+#_b(x) = 2; letter b in word(x)
+
+neutral (ε):
+xε = εx = x
+changes nothing
+x^0 = ε
+
+prefix, suffix:
+ε = both prefix&suffix
+whole word != its proper prefix/suffix
+prefix/suffix ∈ proper prefix/suffix 
+
+language:
+complement of a set is things that do not belong to a set
+A consists of alphabets {a,b,c}
+notA = all that does not belong to A but can be constructed from A's alphabet
+ε
+concatenation of lang:
+A = {w}
+B = {v}
+AB = {x=wv, w in A & v in B} (all possible concatenated words from both languages), (note that something may repeat which does not count additionally towards the set)
+{ab,aa}* = {ε,ab,aa,abab,abaa,aaab,....}
+language could be: set of ∅, Sum*, {x in {a,b}* : |x| = 42}
+A^0 = {ε}
+A = {a,b}, A^2 = {aa,ab,ba,bb}
+Σ*, Σ = {a,b} 
+
+Kleene's star:
+A* = A^0 v A^1 v A^2 v ... (0 or more),(everything from A by repeating as many times of A as possible)
+e.g. A = {a,b}, A* = {ε, a,b, aa,ab,ba,bb, ...}
+A+ = A* - A^0 = A v A^2 v A^3 v ... (1 or more) 
+
+∅ = empty language
+{ε} = language contains empty word (neutral element of concatenation of words)
+complement of A = U - A (complement of a set, is things that do not belong to a set)
+A∅ = ∅ (because it has nothing to combine)
+
+a v (b & c) 
