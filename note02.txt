@@ -1,0 +1,35 @@
+Pattenrs:
+
+[^...] = compliment of a set, e.g. set of (...)
+
+a^- = compliment of an expression
+
+l(a) = language described by a
+l(a) = {a} for a ∈ Σ
+l([^a-b]) = Σ \L([a-b])
+l(.) = Σ \{\n}
+l(a)? = l(a)∪ε if ε ∈ a
+l(a)+ = l(a)l(a)*
+l(a|b) = l(a)∪l(b)
+l(ab) = l(a)l(b)
+l(a^-) = l(a)^-
+l(.) = Σ\{\n} and any word longer than 1 char
+
+a ≡ b iff l(a) = l(b)
+a ≡ ε|aa* ≡ ε|a*a
+a ≡ a|aa+ ≡ a|a+a
+(ab)*a ≡ a(ba)* ; alternating between a and b
+(a|b)* ≡ (a*b*)*
+
+Regexp ∈ Patterns (*imp)
+ε, ∅, a for a ∈ Σ, ab, a|b, a*, (a) = regexp
+
+Language A is regular, iff there is a pattern a, that A = l(a)
+all finite languages are regular
+if A and B are regular
+A ∪ B, A ∩ B, AB, A^-, A* are regular
+
+(a(b?)a)?(a[a-c]a)+
+(ε|aa|aba)(a(a|b|c)a)(a(a|b|c)a)*
+
+word can be subword of itself
